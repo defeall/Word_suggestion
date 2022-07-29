@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body{
+			background-image:url("bg.jpg") ;
+			height: 500px;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.button {
+			border: 2px solid black;
+			color: white;
+			padding: 5px 40px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 20px;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 5px;
+		}
+		.button1 {
+			background-color: #aa696a;
+			margin-left: 150px;
+		}
+		.button2 {
+			background-color: #aa6967;
+		}
+		#heading{
+			font-size: 40px;
+			color: white;
+		}
+		table{
+			font-size: 25px;
+		}
+		#form{
+			left      : 50%;
+			top       : 50%;
+			position  : absolute;
+			transform : translate(-50%, -50%);
+			background-color: rgb(6, 9, 10);
+		}
+		  
+	</style>
+</head>
+
+<body> 
+	<div class="bg">
+	<form  id="form" >
+		<h1><label id="heading"><b>Spell Checker:</b> </label></h1>
+			<table>
+			<tr>
+				<th><label style="color:#aa6967;" for="html"><h3>Word:    </h3></label></th>
+				<th><input  type="text" size="50" class="form-control" value="{{res}}"></th>
+		    </tr>
+		    </table><br><br><br>
+		<button class="button button1"><a class="nav-link" href="{{url_for('result')}}">Go back</a></button>	
+	</form>
+	</div>
+</body>
+</html>
