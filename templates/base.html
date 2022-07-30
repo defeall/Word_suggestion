@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<title>{% block title %} {% endblock %}</title>
+	<style>
+		body{
+			background-image:url("bg.jpg") ;
+			height: 500px;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		#form{
+			left      : 50%;
+			top       : 50%;
+			position  : absolute;
+			transform : translate(-50%, -50%);
+			background-color: rgb(6, 9, 10);
+		}
+		h1{
+			font-size: 40px;
+			color: white;
+			margin-left: 20px;
+		}
+		table{
+			font-size: 25px;
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+		.button {
+			border: 5px solid black;
+			background-color: #aa6967;
+			padding: 5px 40px;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 22px;
+			margin-left: 50px;
+		}
+		.button2 {
+			margin-left: 100px;
+		}  
+	</style>
+</head>
+
+<body> 
+	<div class="bg">
+	<form  id="form" action="{{url_for('result')}}">
+		<h1> Spell Checker: </h1>
+			<table>
+			<tr>
+				<th><label style="color:#aa6967;" for="title"><h3>Word:</h3></label></th>
+				<th><input type="text" size="50" name="title" class="form-control" value="{{ request.form['title']}}"></input></th>
+		    </tr>
+		    </table><br><br><br>
+			<button type="reset"  class="button button1" value="Reset">Clear</button>	
+			<button type="submit" class="button button2" value="Submit">Click Me</button>
+	</form>
+	</div>
+</body>
+</html>

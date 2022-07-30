@@ -24,18 +24,23 @@ def suggestion(string, gram_number=3):
     distances = list(sorted(distances))
     iterator = 0
     for i,j in distances:
-        if(j not in outcomes and len(j)<len(string)+2 and (len(j)> len(string)-2) and len(j)>1):
-           outcomes.append(j)
-           iterator+=1
+        if(j not in outcomes and len(j)<len(string)+3 and (len(j)> len(string)-3) and len(j)>1):
+            score = 0
+            for k in j:
+                if k in string:
+                    score+=1
+            if(score>2 and len(string)>3) or len(string)<=3:
+                outcomes.append(j)
+                iterator+=1
         if(iterator==3):
            return outcomes
 
 @app.route('/result', methods=('GET', 'POST'))
-def find_res():
-    if request.method == 'POST':
-        string = request.form['title']
-        res = str(suggestion(string))
-    
-    return render_template("result.html", res)
+def result():
+    if request.method == 'GET':
+        ans = request.args.getlist('title')
+        results = suggestion(ans[0])
+    return render_template("result.html", results= results)
 
-
+if __name__ == "__main__":
+    app.run(debug=True)
