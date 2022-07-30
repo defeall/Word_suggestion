@@ -9,18 +9,17 @@
 	<title>{% block title %} {% endblock %}</title>
 	<style>
 		body{
-			background-image:url("bg.jpg") ;
 			height: 500px;
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;
+			background-color: rgb(6, 9, 10);
 		}
 		#form{
 			left      : 50%;
 			top       : 50%;
 			position  : absolute;
 			transform : translate(-50%, -50%);
-			background-color: rgb(6, 9, 10);
 		}
 		h1{
 			font-size: 40px;
@@ -53,13 +52,13 @@
 <body> 
 	<div class="bg">
 	<form  id="form" action="{{url_for('result')}}">
-		<h1> Spell Checker: </h1>
+		<h1> Spell Checker: </h1> <br><br>
 			<table>
 			<tr>
 				<th><label style="color:#aa6967;" for="title"><h3>Word:</h3></label></th>
 				<th><input type="text" size="50" name="title" class="form-control" value="{{ request.form['title']}}"></input></th>
 		    </tr>
-		    </table><br><br><br>
+		    </table><br><br>
 			<button type="reset"  class="button button1" value="Reset">Clear</button>	
 			<button type="submit" class="button button2" value="Submit">Click Me</button>
 	</form>

@@ -41,6 +41,3 @@ def result():
         ans = request.args.getlist('title')
         results = suggestion(ans[0])
     return render_template("result.html", results= results)
-
-if __name__ == "__main__":
-    app.run(debug=True)

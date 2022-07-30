@@ -14,13 +14,13 @@
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;
+			background-color: rgb(6, 9, 10);
 		}
 		#form{
 			left      : 50%;
 			top       : 50%;
 			position  : absolute;
 			transform : translate(-50%, -50%);
-			background-color: rgb(6, 9, 10);
 		}
 		h1{
 			font-size: 40px;
@@ -50,11 +50,11 @@
 		<div class="bg">
 			<form  id="form" action="{{url_for('index')}}">
 				{% block content %}
-				<h1>Suggestions</h1>
+				<h1>Suggestions:</h1><br>
 				{% for res in results %}
 						<h2>{{ res }}</h2>
 				{% endfor %}
-				{% endblock %}
+				{% endblock %}<br><br>
 				<button type="submit" class="button button1" value="Submit">Check Another</button>
 			</form>
 			</div>
